@@ -1,0 +1,34 @@
+{
+   "messages": {
+      "USER_SIGNUP": {
+         "PARAMS_MISSING": "MSG_Required_Parameters_Missing",
+         "ALREADY_EXIST": "MSG_Email_Already_Exist",
+         "SUCCESSFULLY_SIGNUP": "MSG_Successfully_Signup"
+      }
+   },
+   "status": {
+      "SUCCESS": 200,
+      "ERROR": 400,
+      "UNAUTHORIZED": 401,
+      "FORBIDDEN": 403,
+      "NOT_FOUND": 404,
+      "CATCH_BLOCK": 404,
+      "CONFLICT": 409,
+      "HEADER_ERROR": 412,
+      "PRE_CONDITION_FAILED": 428
+   },
+   "success": {
+      "SUCCESS": true,
+      "ERROR": false
+   },
+   "headers": {
+      "SECRET_TOKEN": "x-secret-token",
+      "USER_ID": "x-user-id",
+      "ACCESS_TOKEN": "x-access-token"
+   },
+   "type": {
+      "SESSION": "session",
+      "USER": "user",
+      "LOGGEDIN_USER": "loggedin_user"
+   }
+}
