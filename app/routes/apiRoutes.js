@@ -6,11 +6,13 @@
  */
 
 const demoController = require('../controllers/demo/demoModule');
+const userSignupController = require('../controllers/session/userSingupModule');
 
 module.exports = (app, express) => {
    let apiRoutes = express.Router();
    // start writing endpoints here
    apiRoutes.get('/demo', demoController.demoMessage);
+   apiRoutes.post('/user/signup', userSignupController.userSignup);
 
    return apiRoutes;
 };

@@ -7,7 +7,7 @@
 
 const express = require('express');
 const app = express();
-const config = require('./config/' + process.env.ENVR + 'Config');
+const config = require('./config/appConfig');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
@@ -42,4 +42,3 @@ app.get('/*', function (req, res) {
 
 // server started listening here
 server.listen(config.app.port, () => console.log(`App listening on: http://${config.app.host}:${config.app.port}`));
-
