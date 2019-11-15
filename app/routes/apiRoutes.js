@@ -8,7 +8,7 @@
 const demoController = require('../controllers/demo/demoModule');
 const userSignupController = require('../controllers/session/userSingupModule');
 
-module.exports = (app, express) => {
+const routes = (app, express) => {
    let apiRoutes = express.Router();
    // start writing endpoints here
    apiRoutes.get('/demo', demoController.demoMessage);
@@ -16,3 +16,5 @@ module.exports = (app, express) => {
 
    return apiRoutes;
 };
+
+module.exports = routes;
