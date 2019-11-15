@@ -1,1 +1,237 @@
-{}
+{
+   "swagger": "2.0",
+   "info": {
+      "description": "Anasoud Api Response",
+      "version": "1.0.0",
+      "title": "My_APP DOCS",
+      "contact": {
+         "email": "arjun.singh@nexcode.in"
+      }
+   },
+   "host": "localhost:3000",
+   "basePath": "/api",
+   "schemes": [
+      "http"
+   ],
+   "paths": {
+      "/user/signup": {
+         "post": {
+            "tags": [
+               "User"
+            ],
+            "summary": "User Sign Up Module",
+            "description": "user sign up module",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "name": "x-secret-token",
+                  "in": "header",
+                  "description": "secret header token",
+                  "required": true
+               },
+               {
+                  "in": "body",
+                  "name": "body",
+                  "description": "describe your body",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/userSignUp"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Details"
+               }
+            }
+         }
+      },
+      "/user/verify/phone": {
+         "put": {
+            "tags": [
+               "User"
+            ],
+            "summary": "User Phone Verification Module",
+            "description": "user phone verification module",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "name": "x-secret-token",
+                  "in": "header",
+                  "description": "secret header token",
+                  "required": true
+               },
+               {
+                  "in": "body",
+                  "name": "body",
+                  "description": "describe your body",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/userPhoneVerification"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Details"
+               }
+            }
+         }
+      },
+      "/user/resend/verify/phone": {
+         "put": {
+            "tags": [
+               "User"
+            ],
+            "summary": "User Resend Phone Verification Module",
+            "description": "user resend phone verification module",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "name": "x-secret-token",
+                  "in": "header",
+                  "description": "secret header token",
+                  "required": true
+               },
+               {
+                  "in": "body",
+                  "name": "body",
+                  "description": "describe your body",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/resendUserPhoneVerification"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Details"
+               }
+            }
+         }
+      },
+      "/user/login": {
+         "post": {
+            "tags": [
+               "User"
+            ],
+            "summary": "User login Module",
+            "description": "user login module",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "name": "x-secret-token",
+                  "in": "header",
+                  "description": "secret header token",
+                  "required": true
+               },
+               {
+                  "in": "body",
+                  "name": "body",
+                  "description": "describe your body",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/userLogin"
+                  }
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Details"
+               }
+            }
+         }
+      }
+   },
+   "securityDefinitions": {
+      "petstore_auth": {
+         "type": "oauth2",
+         "authorizationUrl": "http://localhost:3001",
+         "flow": "implicit",
+         "scopes": {
+            "write:pets": "modify pets in your account",
+            "read:pets": "read your pets"
+         }
+      },
+      "api_key": {
+         "type": "apiKey",
+         "name": "api_key",
+         "in": "header"
+      }
+   },
+   "definitions": {
+      "userSignUp": {
+         "type": "object",
+         "properties": {
+            "country_phone_code": {
+               "type": "string"
+            },
+            "phone": {
+               "type": "string"
+            }
+         }
+      },
+      "userPhoneVerification": {
+         "type": "object",
+         "properties": {
+            "country_phone_code": {
+               "type": "string"
+            },
+            "phone": {
+               "type": "string"
+            },
+            "verification_otp": {
+               "type": "string"
+            }
+         }
+      },
+      "resendUserPhoneVerification": {
+         "type": "object",
+         "properties": {
+            "country_phone_code": {
+               "type": "string"
+            },
+            "phone": {
+               "type": "string"
+            }
+         }
+      },
+      "userLogin": {
+         "type": "object",
+         "properties": {
+            "country_phone_code": {
+               "type": "string"
+            },
+            "phone": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "profile_photo": {
+               "type": "string"
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,10 @@
+module.exports = {
+   db: {
+      username: 'root',
+      password: 'root',
+      database: 'my_app',
+      host: 'localhost',
+      dailect: 'mysql',
+      socketPath: '/var/lib/mysql.sock'
+   }
+};

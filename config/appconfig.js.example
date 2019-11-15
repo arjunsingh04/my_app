@@ -1,0 +1,7 @@
+module.exports = {
+   app: {
+      port: 3000,
+      host: 'localhost',
+      x_secret_token: 'my_appeur87342384'
+   }
+};
