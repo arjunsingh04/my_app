@@ -4,7 +4,7 @@ module.exports = {
       password: 'root',
       database: 'my_app',
       host: 'localhost',
-      dailect: 'mysql',
+      dialect: 'mysql',
       socketPath: '/var/lib/mysql.sock'
    }
 };

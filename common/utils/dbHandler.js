@@ -11,6 +11,7 @@ const config = require('../../config/dbConfig');
 const connection = new Sequelize(config.db.database, config.db.username, config.db.password, {
    host: config.db.host,
    dialect: config.db.dialect,
+   logging: false,
    pool: {
       max: 5, // maximum no. of connections in a pool
       min: 0, // minimum no. of connections in a pool

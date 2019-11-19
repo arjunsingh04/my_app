@@ -10,17 +10,21 @@ const sequelize = require('sequelize');
 module.exports = (connection, Sequelize) => {
    let User = sequelize.define('users', {
       email: {
-         type: Sequelize.STRING
-      },
-      name: {
-         type: Sequelize.STRING
+         type: Sequelize.STRING,
+         allowNull: false
       },
       phone: {
-         type: Sequelize.STRING
+         type: Sequelize.STRING,
+         allowNull: false
       },
-      profile_photo: {
-         type: Sequelize.STRING
+      dob: {
+         type: Sequelize.DATE,
+         allowNull: false
       },
+      password: {
+         type: Sequelize.STRING,
+         allowNull: false
+      }
    }, {
       freezeTableName: true, // not convert table name into plural
       timestamps: true, // add createdaAt and updatedAt to user schema
