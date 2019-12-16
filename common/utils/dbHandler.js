@@ -8,9 +8,9 @@
 const Sequelize = require('sequelize');
 const config = require('../../config/dbConfig');
 
-const connection = new Sequelize(config.db.database, config.db.username, config.db.password, {
-   host: config.db.host,
-   dialect: config.db.dialect,
+const connection = new Sequelize(config.database, config.username, config.password, {
+   host: config.host,
+   dialect: config.dialect,
    logging: false,
    pool: {
       max: 5, // maximum no. of connections in a pool

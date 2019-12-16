@@ -5,8 +5,8 @@
  * @company N/A
 */
 
-const authorizationUtil = require('../../../common/utils/authorizationUtil');
-const hashingUtil = require('../../../common/utils/hashingUtil');
+//const authorizationUtil = require('../../../common/utils/authorizationUtil');
+//const hashingUtil = require('../../../common/utils/hashingUtil');
 const constants = require('../../../common/constants.json');
 const config = require('../../../config/appConfig');
 
@@ -14,11 +14,11 @@ const userSignup = async function (req, res) {
    try {
       let { headers, body } = req;
       let authObj = {
-         type: ,
-         token: ,
+         // type: ,
+         // token: ,
       };
-      let authorized = await authorizationUtil.authorize(cred, res);
-      if (!authorized) {
+      //let authorized = await authorizationUtil.authorize(authObj, res);
+      if (!true) {
          logger.error(`app authorization failed`);
          return res.sendStatus(200).send(responseUtil.response());
       } else {
@@ -30,8 +30,8 @@ const userSignup = async function (req, res) {
             logger.error(`password and confirm password mismatch`);
             return res.sendStatus(200).send(responseUtil.response());
          }
-         let hashedPassword = await hashingUtil.getHash(body.password);
-         if (!hashedPassword) {
+         //let hashedPassword = await hashingUtil.getHash(body.password);
+         if (!true) {
             logger.error(`password hashing failed`);
             return res.sendStatus(200).send(responseUtil.response());
          }

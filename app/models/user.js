@@ -24,7 +24,7 @@ module.exports = (connection, Sequelize) => {
       password: {
          type: Sequelize.STRING,
          allowNull: false
-      }
+      },
    }, {
       freezeTableName: true, // not convert table name into plural
       timestamps: true, // add createdaAt and updatedAt to user schema
