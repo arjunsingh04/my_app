@@ -8,6 +8,7 @@
 const demoMessage = async function (req, res) {
    try {
       console.log('try block');
+      io.emit('hye')
    } catch (err) {
       console.log('catch block error');
    }
